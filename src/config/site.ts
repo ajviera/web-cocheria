@@ -24,3 +24,7 @@ export const telHref = (tel: string): string => `tel:${tel.replace(/\s+/g, '')}`
 
 /** WhatsApp click-to-chat for a digits-only number. */
 export const whatsappHref = (n: string): string => `https://wa.me/${n}`;
+
+/** Google Maps directions link for a free-form address string. */
+export const mapsHref = (address: string): string =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;

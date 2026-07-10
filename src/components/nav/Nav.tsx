@@ -30,10 +30,10 @@ export const Nav = () => {
         </nav>
 
         <div className={styles.actions}>
+          <ThemeToggle />
           <a href="#contacto" className={styles.cta}>
             {t('cta')}
           </a>
-          <ThemeToggle />
         </div>
       </div>
     </header>

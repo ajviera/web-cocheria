@@ -21,13 +21,22 @@ export const Services = () => {
       </header>
 
       <ul className={styles.grid}>
-        {SERVICES.map(service => (
+        {SERVICES.map((service, index) => (
           <li key={service.id} className={styles.card}>
+            <span className={styles.num} aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
             <h3 className={styles.cardTitle}>{t(service.titleKey)}</h3>
             <p className={styles.cardText}>{t(service.descriptionKey)}</p>
           </li>
         ))}
       </ul>
+
+      <div className={styles.footer}>
+        <a href="#contacto" className={styles.cta}>
+          {t('cta')}
+        </a>
+      </div>
     </section>
   );
 };

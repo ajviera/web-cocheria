@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 // Keep manually in sync with src/styles/tokens.css (:root).
 const THEME_COLOR = '#1f5fbf'; // --accent (light theme)
-const BACKGROUND_COLOR = '#f6f9fc'; // --bg (light theme)
+const BACKGROUND_COLOR = '#eef3fa'; // --bg (light theme)
 
 const manifest = async (): Promise<MetadataRoute.Manifest> => {
   const t = await getTranslations('nav');

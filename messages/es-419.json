@@ -15,12 +15,13 @@
     "title": "Cochería Nogués & Martínez",
     "tagline": "Acompañamos cada despedida con respeto, calidez y compromiso.",
     "body": "Acompañamos a cada familia en los momentos más difíciles. Como cochería en José C. Paz, disponemos de modernas salas velatorias y un equipo humano preparado para brindar un servicio integral, con contención y asesoramiento las 24 horas, los 365 días del año.",
-    "ctaPrimary": "Contactar ahora",
-    "ctaSecondary": "Nuestros servicios"
+    "ctaWhatsapp": "Escribir por WhatsApp",
+    "ctaCall": "Llamar ahora"
   },
   "services": {
     "eyebrow": "Qué ofrecemos",
     "title": "Nuestros servicios",
+    "cta": "Consúltenos sin compromiso →",
     "subtitle": "Ponemos a su disposición una amplia variedad de servicios funerarios, adaptados a las necesidades de cada familia. Ofrecemos diferentes modalidades de sepelio, cremación, traslados y ceremonias, brindando asesoramiento personalizado para encontrar la opción más adecuada en cada situación.",
     "items": {
       "funebres": {
@@ -62,6 +63,7 @@
     "whatsappLabel": "WhatsApp",
     "addressLabel": "Dirección",
     "whatsappCta": "Escribir por WhatsApp",
+    "directionsCta": "Cómo llegar →",
     "mapTitle": "Mapa de ubicación de Cochería Nogués & Martínez en José C. Paz"
   },
   "faq": {

@@ -19,14 +19,24 @@ describe('Hero', () => {
       ).toBeInTheDocument();
     });
 
-    it('should render primary and secondary call-to-action links', () => {
+    it('should render WhatsApp and call action links pointing to the configured channels', () => {
       renderWithIntl(<Hero />);
 
-      const primary = screen.getByRole('link', { name: 'Contactar ahora' });
-      const secondary = screen.getByRole('link', { name: 'Nuestros servicios' });
+      const whatsapp = screen.getByRole('link', { name: /Escribir por WhatsApp/ });
+      const call = screen.getByRole('link', { name: 'Llamar ahora' });
 
-      expect(primary).toHaveAttribute('href', '#contacto');
-      expect(secondary).toHaveAttribute('href', '#servicios');
+      expect(whatsapp).toHaveAttribute('href', 'https://wa.me/5491161512447');
+      expect(whatsapp).toHaveAttribute('target', '_blank');
+      expect(whatsapp).toHaveAttribute('rel', 'noopener noreferrer');
+      expect(call).toHaveAttribute('href', 'tel:+5491161512447');
+    });
+
+    it('should display the configured address', () => {
+      renderWithIntl(<Hero />);
+
+      expect(
+        screen.getByText('Av. Gaspar Campos 4848, José C. Paz, Buenos Aires'),
+      ).toBeInTheDocument();
     });
   });
 });

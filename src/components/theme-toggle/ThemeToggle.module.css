@@ -2,19 +2,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border2);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text2);
-  font-size: 1.05rem;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
   line-height: 1;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .toggle:hover {
   color: var(--accent);
   border-color: var(--accent);
-  background: var(--accent-glow);
 }

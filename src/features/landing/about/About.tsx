@@ -14,16 +14,25 @@ export const About = () => {
           <h2 className={styles.title}>{t('title')}</h2>
           <p className={styles.body}>{t('body1')}</p>
           <p className={styles.body}>{t('body2')}</p>
+
+          <ul className={styles.pills}>
+            {HIGHLIGHTS.map(key => (
+              <li key={key} className={styles.pill}>
+                <span className={styles.mark} aria-hidden="true" />
+                {t(`highlights.${key}`)}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <ul className={styles.highlights}>
-          {HIGHLIGHTS.map(key => (
-            <li key={key} className={styles.highlight}>
-              <span className={styles.mark} aria-hidden="true" />
-              {t(`highlights.${key}`)}
-            </li>
-          ))}
-        </ul>
+        <div className={styles.figure} aria-hidden="true">
+          <div className={styles.frame}>
+            <span className={styles.frameIcon}>
+              <span className={styles.frameIconInner} />
+            </span>
+            <span className={styles.frameLabel}>foto — equipo / instalaciones</span>
+          </div>
+        </div>
       </div>
     </section>
   );
