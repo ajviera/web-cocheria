@@ -1,0 +1,90 @@
+.contact {
+  padding: 100px 32px;
+}
+
+.inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.title {
+  margin-top: 14px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.subtitle {
+  margin-top: 18px;
+  color: var(--text2);
+}
+
+.availability {
+  display: inline-block;
+  margin-top: 26px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--sage-light);
+  color: var(--sage);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.detail {
+  text-align: center;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--text3);
+}
+
+.value {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 1.12rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.value:hover {
+  color: var(--accent);
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 44px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.whatsapp:hover {
+  background: var(--accent2);
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 68px 22px;
+  }
+}

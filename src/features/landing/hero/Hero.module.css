@@ -1,0 +1,96 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 128px 32px 112px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.glow {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  max-width: 760px;
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.title {
+  margin-top: 18px;
+  font-size: clamp(2.4rem, 6vw, 3.9rem);
+}
+
+.tagline {
+  margin-top: 20px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  font-style: italic;
+  color: var(--text2);
+}
+
+.body {
+  margin: 22px auto 0;
+  max-width: 60ch;
+  color: var(--text2);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.primary,
+.secondary {
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--bg);
+  border: 1px solid var(--accent);
+}
+
+.primary:hover {
+  background: var(--accent2);
+  border-color: var(--accent2);
+}
+
+.secondary {
+  color: var(--text);
+  border: 1px solid var(--border2);
+}
+
+.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 92px 22px 80px;
+  }
+}

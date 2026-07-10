@@ -1,0 +1,73 @@
+/*
+ * Design tokens for Cochería Nogués & Martínez.
+ * The palette follows the navy-to-celeste gradient of the brand card — a calm,
+ * elegant register suited to a funeral home. Light is the default theme; dark
+ * mirrors every token. Never hardcode colors in components — reference these
+ * variables only.
+ */
+:root {
+  /* Surfaces — near-white with a cool, quiet blue tint */
+  --bg: #f6f9fc;
+  --bg2: #eef3f9;
+  --bg3: #e3eaf4;
+  --bg4: #d6e0ee;
+  --border: #dbe5f1;
+  --border2: #c0cee2;
+
+  /* Text — deep navy slate down to muted steel-blue */
+  --text: #101a2e;
+  --text2: #3e4a63;
+  --text3: #67728a;
+
+  /* Accent — brand royal blue rising to azure */
+  --accent: #1f5fbf;
+  --accent2: #2570c9;
+  --accent-glow: rgba(31, 95, 191, 0.12);
+
+  /* Secondary — serene blue-green teal, used sparingly (e.g. "Atención 24hs") */
+  --sage: #146b6b;
+  --sage-light: rgba(20, 107, 107, 0.12);
+
+  /* Status (kept minimal — a marketing site rarely needs them) */
+  --green: #2f7d5c;
+  --green-light: rgba(47, 125, 92, 0.12);
+  --amber: #8f6412;
+  --amber-light: rgba(143, 100, 18, 0.12);
+  --red: #9c4a3f;
+  --red-light: rgba(156, 74, 63, 0.1);
+
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Typography scales set on <html> via next/font; these name the families. */
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+}
+
+[data-theme='dark'] {
+  --bg: #081b3f;
+  --bg2: #0d2350;
+  --bg3: #123061;
+  --bg4: #173a72;
+  --border: #1c3f75;
+  --border2: #2b4f8c;
+
+  --text: #eef3fb;
+  --text2: #c3d0e6;
+  --text3: #8fa0c2;
+
+  --accent: #5cb3ee;
+  --accent2: #4593de;
+  --accent-glow: rgba(92, 179, 238, 0.16);
+
+  --sage: #4fb3ac;
+  --sage-light: rgba(79, 179, 172, 0.16);
+
+  --green: #6fcf9e;
+  --green-light: rgba(111, 207, 158, 0.14);
+  --amber: #e0b563;
+  --amber-light: rgba(224, 181, 99, 0.14);
+  --red: #e08a7d;
+  --red-light: rgba(224, 138, 125, 0.14);
+}
