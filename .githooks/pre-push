@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+#
+# pre-push hook — runs the web-cocheria quality gates and blocks the push
+# unless lint, type-checking, and the per-file test-coverage gate all pass.
+#
+# Enable it once per clone with:
+#   git config core.hooksPath .githooks
+#
+# Skip the (slow) coverage gate for a single push:
+#   SKIP_COVERAGE=1 git push
+#
+# Bypass entirely (use sparingly):
+#   git push --no-verify
+#
+set -euo pipefail
+
+# Resolve the repo root from the hook's own location so it works from any CWD.
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if [ ! -f "$REPO_ROOT/package.json" ]; then
+  echo "pre-push: cannot find package.json at $REPO_ROOT — skipping gates." >&2
+  exit 0
+fi
+
+cd "$REPO_ROOT"
+
+# Ensure dependencies are present so the gates can run on a fresh clone.
+if [ ! -d node_modules ]; then
+  echo "pre-push: installing dependencies (node_modules missing)…"
+  npm ci
+fi
+
+echo "pre-push: linting (npm run lint)…"
+npm run lint
+
+echo "pre-push: type-checking (npm run typecheck)…"
+npm run typecheck
+
+if [ "${SKIP_COVERAGE:-0}" = "1" ]; then
+  echo "pre-push: SKIP_COVERAGE=1 set — running tests without the coverage gate…"
+  npm test
+  echo "✅ pre-push: lint, typecheck, and tests passed (coverage gate skipped)."
+  exit 0
+fi
+
+# Enforce the per-file 100% coverage gate. `test:coverage:check` runs Jest with
+# coverage, then scripts/check-coverage.js walks coverage-summary.json and fails
+# if ANY non-excluded file is below the threshold (per file, not an average).
+echo "pre-push: running tests with the per-file coverage gate…"
+npm run test:coverage:check
+
+echo "✅ pre-push: lint, typecheck, and per-file coverage gate passed."
+exit 0

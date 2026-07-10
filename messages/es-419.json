@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "title": "Cochería Nogués & Martínez — Servicios Fúnebres en José C. Paz, Buenos Aires",
+    "description": "Servicios funerarios integrales y personalizados en José C. Paz, Buenos Aires, Argentina. Acompañamos a cada familia con respeto, calidez y profesionalismo. Sepelios, cremaciones, traslados nacionales e internacionales, velatorios y arreglos florales."
+  },
+  "nav": {
+    "brand": "Cochería Nogués & Martínez",
+    "servicios": "Servicios",
+    "nosotros": "Nosotros",
+    "contacto": "Contacto",
+    "cta": "Atención 24 hs"
+  },
+  "hero": {
+    "eyebrow": "Servicios fúnebres",
+    "title": "Cochería Nogués & Martínez",
+    "tagline": "Acompañamos cada despedida con respeto, calidez y compromiso.",
+    "body": "Acompañamos a cada familia en los momentos más difíciles. Disponemos de modernas salas velatorias y un equipo humano preparado para brindar un servicio integral, ofreciendo contención y asesoramiento durante todo el proceso.",
+    "ctaPrimary": "Contactar ahora",
+    "ctaSecondary": "Nuestros servicios"
+  },
+  "services": {
+    "eyebrow": "Qué ofrecemos",
+    "title": "Nuestros servicios",
+    "subtitle": "Ponemos a su disposición una amplia variedad de servicios funerarios, adaptados a las necesidades de cada familia. Ofrecemos diferentes modalidades de sepelio, cremación, traslados y ceremonias, brindando asesoramiento personalizado para encontrar la opción más adecuada en cada situación.",
+    "items": {
+      "funebres": {
+        "title": "Servicios Fúnebres",
+        "description": "Brindamos servicios fúnebres completamente personalizados, adaptados a las necesidades y deseos de cada familia. Nuestro equipo acompaña cada etapa con respeto, sensibilidad y profesionalismo, ofreciendo un servicio integral que permite despedir a sus seres queridos de la manera más adecuada."
+      },
+      "traslados": {
+        "title": "Traslados",
+        "description": "Realizamos traslados funerarios tanto dentro del país como al exterior, incluyendo servicios de repatriación internacional. Nos ocupamos de toda la coordinación y la documentación necesaria para garantizar un proceso seguro, ágil y sin preocupaciones para la familia."
+      },
+      "velacion": {
+        "title": "Velación en Domicilios",
+        "description": "Ofrecemos el servicio de velación en domicilios con capilla ardiente, brindando un espacio íntimo y respetuoso para que familiares y seres queridos puedan despedirse en un entorno más cercano, privado y confortable."
+      },
+      "florales": {
+        "title": "Arreglos Florales",
+        "description": "Disponemos de una amplia variedad de arreglos florales para homenajear a sus seres queridos. Nuestros asesores están a su disposición para orientarlos y ayudarles a elegir la opción que mejor represente sus sentimientos y acompañe la ceremonia."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Nosotros",
+    "title": "Un acompañamiento humano y profesional",
+    "body1": "En Cochería Nogués & Martínez brindamos un servicio funerario integral y personalizado, acompañando a las familias con respeto, calidez y profesionalismo en cada etapa del proceso. Nuestro compromiso es ofrecer tranquilidad, contención y un servicio de excelencia en los momentos más difíciles.",
+    "body2": "Contamos con un equipo de profesionales capacitados para asesorarlo en todo lo relacionado con servicios funerarios, incluyendo sepelios, cremaciones, traslados nacionales e internacionales, gestiones ante PAMI y otros trámites necesarios, brindando acompañamiento y soluciones de manera clara, responsable y cercana.",
+    "highlights": {
+      "salas": "Modernas salas velatorias",
+      "equipo": "Equipo humano y capacitado",
+      "integral": "Servicio integral y personalizado",
+      "tramites": "Gestión de trámites y PAMI"
+    }
+  },
+  "contact": {
+    "eyebrow": "Estamos para ayudarlo",
+    "title": "Contáctenos",
+    "subtitle": "Nuestro equipo está disponible las 24 horas, todos los días del año, para brindarle asesoramiento y acompañamiento inmediato.",
+    "availability": "Atención las 24 horas, los 365 días del año",
+    "phoneLabel": "Teléfono",
+    "whatsappLabel": "WhatsApp",
+    "addressLabel": "Dirección",
+    "whatsappCta": "Escribir por WhatsApp"
+  },
+  "footer": {
+    "brand": "Cochería Nogués & Martínez",
+    "tagline": "Servicios fúnebres integrales — acompañamiento con respeto y compromiso.",
+    "availability": "Atención 24 hs",
+    "address": "Av. Gaspar Campos 4848, José C. Paz, Buenos Aires",
+    "rights": "Todos los derechos reservados."
+  },
+  "themeToggle": {
+    "toLight": "Cambiar a modo claro",
+    "toDark": "Cambiar a modo oscuro"
+  }
+}
