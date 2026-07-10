@@ -14,7 +14,7 @@ describe('Hero', () => {
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          'Acompañamos a cada familia en los momentos más difíciles. Disponemos de modernas salas velatorias y un equipo humano preparado para brindar un servicio integral, ofreciendo contención y asesoramiento durante todo el proceso.',
+          'Acompañamos a cada familia en los momentos más difíciles. Como cochería en José C. Paz, disponemos de modernas salas velatorias y un equipo humano preparado para brindar un servicio integral, con contención y asesoramiento las 24 horas, los 365 días del año.',
         ),
       ).toBeInTheDocument();
     });

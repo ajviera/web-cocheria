@@ -10,6 +10,7 @@ describe('Landing', () => {
       expect(screen.getByRole('link', { name: 'Cochería Nogués & Martínez' })).toBeInTheDocument();
       expect(screen.getByRole('heading', { level: 1, name: 'Cochería Nogués & Martínez' })).toBeInTheDocument();
       expect(screen.getByRole('heading', { level: 2, name: 'Nuestros servicios' })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 2, name: 'Preguntas frecuentes' })).toBeInTheDocument();
       expect(screen.getByRole('contentinfo')).toBeInTheDocument();
     });
   });

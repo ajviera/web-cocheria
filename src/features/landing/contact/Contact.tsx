@@ -38,6 +38,16 @@ export const Contact = () => {
           </div>
         </dl>
 
+        <div className={styles.mapWrapper}>
+          <iframe
+            src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
+            title={t('mapTitle')}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className={styles.map}
+          />
+        </div>
+
         <a
           href={whatsappHref(SITE.whatsapp)}
           className={styles.whatsapp}

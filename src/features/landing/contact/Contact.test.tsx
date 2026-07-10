@@ -40,5 +40,19 @@ describe('Contact', () => {
       expect(mailtoLink).not.toBeInTheDocument();
       expect(document.querySelector('a[href^="mailto:"]')).not.toBeInTheDocument();
     });
+
+    it('should render an embedded Google Maps iframe pointing to the site address', () => {
+      renderWithIntl(<Contact />);
+
+      const mapIframe = screen.getByTitle(
+        'Mapa de ubicación de Cochería Nogués & Martínez en José C. Paz',
+      );
+
+      expect(mapIframe).toBeInTheDocument();
+      expect(mapIframe).toHaveAttribute(
+        'src',
+        `https://www.google.com/maps?q=${encodeURIComponent('Av. Gaspar Campos 4848, José C. Paz, Buenos Aires')}&output=embed`,
+      );
+    });
   });
 });

@@ -6,6 +6,9 @@ process.env.NEXT_PUBLIC_CONTACT_PHONE = '15-6151-2447';
 process.env.NEXT_PUBLIC_CONTACT_TEL = '+5491161512447';
 process.env.NEXT_PUBLIC_CONTACT_WHATSAPP = '5491161512447';
 process.env.NEXT_PUBLIC_CONTACT_ADDRESS = 'Av. Gaspar Campos 4848, José C. Paz, Buenos Aires';
+process.env.NEXT_PUBLIC_SITE_URL = 'http://localhost:3000';
+process.env.NEXT_PUBLIC_CONTACT_LOCALITY = 'José C. Paz';
+process.env.NEXT_PUBLIC_CONTACT_REGION = 'Buenos Aires';
 
 jest.mock('next/cache', () => ({
   revalidatePath: jest.fn(),
