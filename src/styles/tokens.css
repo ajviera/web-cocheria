@@ -20,24 +20,24 @@
   --text-2: #43536e;
   --text-3: #6f7f99;
 
-  /* Accent — brand royal blue */
-  --accent: #1f5fbf;
-  --accent-hover: #17509f;
-  --accent-active: #113f80;
+  /* Accent — brand deep blue */
+  --accent: #005188;
+  --accent-hover: #00416d;
+  --accent-active: #003558;
   --accent-contrast: #ffffff;
-  --accent-soft: #e6eefb;
+  --accent-soft: #dce9f4;
 
   /* Secondary — serene teal, used sparingly as reinforcement only */
   --sage: #2f7f78;
   --sage-soft: #e1f0ed;
 
   /* Utility */
-  --focus: #3f7fd6;
+  --focus: #2b82c4;
   --whatsapp: #1fa855;
 
   /* Brand gradient — hero, contact panel and footer */
   --grad-1: #071a3d;
-  --grad-2: #1c5fbf;
+  --grad-2: #005188;
   --grad-3: #7ec8f0;
 
   /* Elevation */
@@ -82,7 +82,7 @@
   --whatsapp: #25c065;
 
   --grad-1: #04122b;
-  --grad-2: #0f3c86;
+  --grad-2: #0a4675;
   --grad-3: #2f79cf;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
