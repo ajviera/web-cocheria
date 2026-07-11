@@ -1,20 +1,19 @@
 {
   "metadata": {
-    "title": "Cochería en José C. Paz | Nogués & Martínez — Atención 24 hs",
-    "description": "Cochería en José C. Paz: sepelios, cremaciones, traslados y velatorios. Atención las 24 horas, los 365 días. Gestión PAMI. Contáctenos por WhatsApp."
+    "title": "Cocheria en José C. Paz | Nogues & Martinez — Atención 24 hs",
+    "description": "Cocheria en José C. Paz: sepelios, cremaciones, traslados y velatorios. Atención las 24 horas, los 365 días. Gestión PAMI. Contáctenos por WhatsApp."
   },
   "nav": {
-    "brand": "Cochería Nogués & Martínez",
+    "brand": "Cocheria Nogues & Martinez",
     "servicios": "Servicios",
     "nosotros": "Nosotros",
-    "contacto": "Contacto",
     "cta": "Atención 24 hs"
   },
   "hero": {
     "eyebrow": "Servicios fúnebres",
-    "title": "Cochería Nogués & Martínez",
+    "title": "Cocheria Nogues & Martinez",
     "tagline": "Acompañamos cada despedida con respeto, calidez y compromiso.",
-    "body": "Acompañamos a cada familia en los momentos más difíciles. Como cochería en José C. Paz, disponemos de modernas salas velatorias y un equipo humano preparado para brindar un servicio integral, con contención y asesoramiento las 24 horas, los 365 días del año.",
+    "body": "Acompañamos a cada familia en los momentos más difíciles. Como cocheria en José C. Paz, disponemos de modernas salas velatorias y un equipo humano preparado para brindar un servicio integral, con contención y asesoramiento las 24 horas, los 365 días del año.",
     "ctaWhatsapp": "Escribir por WhatsApp",
     "ctaCall": "Llamar ahora"
   },
@@ -30,7 +29,7 @@
       },
       "traslados": {
         "title": "Traslados",
-        "description": "Realizamos traslados funerarios tanto dentro del país como al exterior, incluyendo servicios de repatriación internacional. Nos ocupamos de toda la coordinación y la documentación necesaria para garantizar un proceso seguro, ágil y sin preocupaciones para la familia."
+        "description": "Realizamos traslados funerarios en José C. Paz y la zona, ocupándonos del retiro y el traslado del fallecido cuando la familia lo necesita. Coordinamos toda la logística y la documentación necesaria para garantizar un proceso seguro, ágil y sin preocupaciones para la familia."
       },
       "velacion": {
         "title": "Velación en Domicilios",
@@ -45,8 +44,8 @@
   "about": {
     "eyebrow": "Nosotros",
     "title": "Un acompañamiento humano y profesional",
-    "body1": "En Cochería Nogués & Martínez brindamos un servicio funerario integral y personalizado, acompañando a las familias con respeto, calidez y profesionalismo en cada etapa del proceso. Nuestro compromiso es ofrecer tranquilidad, contención y un servicio de excelencia en los momentos más difíciles.",
-    "body2": "Contamos con un equipo de profesionales capacitados para asesorarlo en todo lo relacionado con servicios funerarios, incluyendo sepelios, cremaciones, traslados nacionales e internacionales, gestiones ante PAMI y otros trámites necesarios, brindando acompañamiento y soluciones de manera clara, responsable y cercana.",
+    "body1": "En Cocheria Nogues & Martinez brindamos un servicio funerario integral y personalizado, acompañando a las familias con respeto, calidez y profesionalismo en cada etapa del proceso. Nuestro compromiso es ofrecer tranquilidad, contención y un servicio de excelencia en los momentos más difíciles.",
+    "body2": "Contamos con un equipo de profesionales capacitados para asesorarlo en todo lo relacionado con servicios funerarios, incluyendo sepelios, cremaciones, traslados, gestiones ante PAMI y otros trámites necesarios, brindando acompañamiento y soluciones de manera clara, responsable y cercana.",
     "highlights": {
       "salas": "Modernas salas velatorias",
       "equipo": "Equipo humano y capacitado",
@@ -64,7 +63,7 @@
     "addressLabel": "Dirección",
     "whatsappCta": "Escribir por WhatsApp",
     "directionsCta": "Cómo llegar →",
-    "mapTitle": "Mapa de ubicación de Cochería Nogués & Martínez en José C. Paz"
+    "mapTitle": "Mapa de ubicación de Cocheria Nogues & Martinez en José C. Paz"
   },
   "faq": {
     "eyebrow": "Dudas frecuentes",
@@ -73,7 +72,7 @@
     "items": {
       "primerasHoras": {
         "question": "¿Qué hacer en las primeras horas tras un fallecimiento?",
-        "answer": "Ante un fallecimiento, lo primero es contactar a la cochería para coordinar el traslado del fallecido y comenzar los trámites correspondientes. En Cochería Nogués & Martínez lo asesoramos desde el primer llamado, las 24 horas, para acompañarlo en cada paso: certificado de defunción, elección de sala velatoria y organización del servicio."
+        "answer": "Ante un fallecimiento, lo primero es contactar a la cocheria para coordinar el traslado del fallecido y comenzar los trámites correspondientes. En Cocheria Nogues & Martinez lo asesoramos desde el primer llamado, las 24 horas, para acompañarlo en cada paso: certificado de defunción, elección de sala velatoria y organización del servicio."
       },
       "urgencia": {
         "question": "¿Cómo los contacto ante una urgencia?",
@@ -84,8 +83,8 @@
         "answer": "Sí. Asesoramos y gestionamos la documentación necesaria para tramitar el subsidio por sepelio ante PAMI y ANSES. El monto y los requisitos vigentes los confirmamos junto a la familia al iniciar el trámite, ya que pueden actualizarse."
       },
       "traslados": {
-        "question": "¿Realizan traslados fuera de José C. Paz o al exterior?",
-        "answer": "Sí, coordinamos traslados dentro del país y repatriaciones internacionales, ocupándonos de toda la documentación y logística necesaria para que el proceso sea seguro y sin trámites adicionales para la familia."
+        "question": "¿Realizan el traslado del fallecido en José C. Paz?",
+        "answer": "Sí, realizamos los traslados funerarios en José C. Paz y la zona, ocupándonos de toda la documentación y logística necesaria para que el proceso sea seguro y sin trámites adicionales para la familia."
       },
       "cremacionSepelio": {
         "question": "¿Cómo elijo entre sepelio y cremación?",
@@ -93,12 +92,12 @@
       },
       "costos": {
         "question": "¿Cuál es el costo de un servicio fúnebre?",
-        "answer": "El costo varía según el tipo de servicio, la modalidad de sepelio o cremación y las coberturas disponibles (PAMI, obra social o particular). Prefiera consultarnos por teléfono o WhatsApp: le brindamos un presupuesto claro y sin compromiso, adaptado a su situación."
+        "answer": "El costo varía según el tipo de servicio, la modalidad de sepelio o cremación, el ataúd elegido y las coberturas disponibles (PAMI, obra social o particular). Prefiera consultarnos por teléfono o WhatsApp: le brindamos un presupuesto claro y sin compromiso, adaptado a su situación."
       }
     }
   },
   "footer": {
-    "brand": "Cochería Nogués & Martínez",
+    "brand": "Cocheria Nogues & Martinez",
     "tagline": "Servicios fúnebres integrales — acompañamiento con respeto y compromiso.",
     "availability": "Atención 24 hs",
     "address": "Av. Gaspar Campos 4848, José C. Paz, Buenos Aires",

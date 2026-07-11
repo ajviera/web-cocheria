@@ -7,14 +7,14 @@ describe('Hero', () => {
     it('should display the heading and taglines', () => {
       renderWithIntl(<Hero />);
 
-      expect(screen.getByRole('heading', { level: 1, name: 'Cochería Nogués & Martínez' })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 1, name: 'Cocheria Nogues & Martinez' })).toBeInTheDocument();
       expect(screen.getByText('Servicios fúnebres')).toBeInTheDocument();
       expect(
         screen.getByText('Acompañamos cada despedida con respeto, calidez y compromiso.'),
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          'Acompañamos a cada familia en los momentos más difíciles. Como cochería en José C. Paz, disponemos de modernas salas velatorias y un equipo humano preparado para brindar un servicio integral, con contención y asesoramiento las 24 horas, los 365 días del año.',
+          'Acompañamos a cada familia en los momentos más difíciles. Como cocheria en José C. Paz, disponemos de modernas salas velatorias y un equipo humano preparado para brindar un servicio integral, con contención y asesoramiento las 24 horas, los 365 días del año.',
         ),
       ).toBeInTheDocument();
     });

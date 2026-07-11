@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { renderWithIntl } from '@/test-utils/render-with-intl';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { Nav } from './Nav';
@@ -16,12 +17,33 @@ describe('Nav', () => {
     document.documentElement.removeAttribute('data-theme');
   });
 
-  it('should render the brand link pointing to the #inicio anchor', () => {
+  it('should render the brand logo linking to the #inicio anchor', () => {
     renderNav();
 
     expect(
-      screen.getByRole('link', { name: 'Cochería Nogués & Martínez' }),
+      screen.getByRole('link', { name: 'Cocheria Nogues & Martinez' }),
     ).toHaveAttribute('href', '#inicio');
+  });
+
+  it('should show the navy logo in the default light theme', () => {
+    renderNav();
+
+    expect(
+      screen.getByRole('img', { name: 'Cocheria Nogues & Martinez' }),
+    ).toHaveAttribute('src', expect.stringContaining('logo-line-navy'));
+  });
+
+  it('should switch to the white logo when dark theme is active', async () => {
+    const user = userEvent.setup();
+    renderNav();
+
+    await user.click(
+      screen.getByRole('button', { name: 'Cambiar a modo oscuro' }),
+    );
+
+    expect(
+      screen.getByRole('img', { name: 'Cocheria Nogues & Martinez' }),
+    ).toHaveAttribute('src', expect.stringContaining('logo-line-white'));
   });
 
   it('should render the section anchor links', () => {
@@ -35,10 +57,14 @@ describe('Nav', () => {
       'href',
       '#nosotros',
     );
-    expect(screen.getByRole('link', { name: 'Contacto' })).toHaveAttribute(
-      'href',
-      '#contacto',
-    );
+  });
+
+  it('should not render a Contacto anchor link in the nav', () => {
+    renderNav();
+
+    expect(
+      screen.queryByRole('link', { name: 'Contacto' }),
+    ).not.toBeInTheDocument();
   });
 
   it('should render the CTA link pointing to the #contacto anchor', () => {

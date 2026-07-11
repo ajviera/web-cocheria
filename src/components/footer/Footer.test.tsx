@@ -3,10 +3,12 @@ import { renderWithIntl } from '@/test-utils/render-with-intl';
 import { Footer } from './Footer';
 
 describe('Footer', () => {
-  it('should render the brand name and tagline', () => {
+  it('should render the brand logo and tagline', () => {
     renderWithIntl(<Footer />);
 
-    expect(screen.getByText('Cochería Nogués & Martínez')).toBeInTheDocument();
+    expect(
+      screen.getByRole('img', { name: 'Cocheria Nogues & Martinez' }),
+    ).toHaveAttribute('src', expect.stringContaining('logo-line-white'));
     expect(
       screen.getByText(
         'Servicios fúnebres integrales — acompañamiento con respeto y compromiso.',
@@ -44,7 +46,7 @@ describe('Footer', () => {
 
     expect(
       screen.getByText(
-        `© ${year} Cochería Nogués & Martínez. Todos los derechos reservados.`,
+        `© ${year} Cocheria Nogues & Martinez. Todos los derechos reservados.`,
       ),
     ).toBeInTheDocument();
   });

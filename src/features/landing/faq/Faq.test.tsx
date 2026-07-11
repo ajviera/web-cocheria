@@ -20,7 +20,7 @@ describe('Faq', () => {
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          'Ante un fallecimiento, lo primero es contactar a la cochería para coordinar el traslado del fallecido y comenzar los trámites correspondientes. En Cochería Nogués & Martínez lo asesoramos desde el primer llamado, las 24 horas, para acompañarlo en cada paso: certificado de defunción, elección de sala velatoria y organización del servicio.',
+          'Ante un fallecimiento, lo primero es contactar a la cocheria para coordinar el traslado del fallecido y comenzar los trámites correspondientes. En Cocheria Nogues & Martinez lo asesoramos desde el primer llamado, las 24 horas, para acompañarlo en cada paso: certificado de defunción, elección de sala velatoria y organización del servicio.',
         ),
       ).toBeInTheDocument();
 
@@ -41,11 +41,11 @@ describe('Faq', () => {
       ).toBeInTheDocument();
 
       expect(
-        screen.getByText('¿Realizan traslados fuera de José C. Paz o al exterior?'),
+        screen.getByText('¿Realizan el traslado del fallecido en José C. Paz?'),
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          'Sí, coordinamos traslados dentro del país y repatriaciones internacionales, ocupándonos de toda la documentación y logística necesaria para que el proceso sea seguro y sin trámites adicionales para la familia.',
+          'Sí, realizamos los traslados funerarios en José C. Paz y la zona, ocupándonos de toda la documentación y logística necesaria para que el proceso sea seguro y sin trámites adicionales para la familia.',
         ),
       ).toBeInTheDocument();
 
@@ -59,7 +59,7 @@ describe('Faq', () => {
       expect(screen.getByText('¿Cuál es el costo de un servicio fúnebre?')).toBeInTheDocument();
       expect(
         screen.getByText(
-          'El costo varía según el tipo de servicio, la modalidad de sepelio o cremación y las coberturas disponibles (PAMI, obra social o particular). Prefiera consultarnos por teléfono o WhatsApp: le brindamos un presupuesto claro y sin compromiso, adaptado a su situación.',
+          'El costo varía según el tipo de servicio, la modalidad de sepelio o cremación, el ataúd elegido y las coberturas disponibles (PAMI, obra social o particular). Prefiera consultarnos por teléfono o WhatsApp: le brindamos un presupuesto claro y sin compromiso, adaptado a su situación.',
         ),
       ).toBeInTheDocument();
     });

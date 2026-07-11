@@ -7,7 +7,7 @@ describe('HomePage', () => {
     it('should render the landing page', () => {
       renderWithIntl(<HomePage />);
 
-      expect(screen.getByRole('link', { name: 'Cochería Nogués & Martínez' })).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: 'Cocheria Nogues & Martinez' })).toBeInTheDocument();
     });
   });
 });

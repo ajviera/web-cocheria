@@ -1,5 +1,5 @@
 /*
- * Design tokens for Cochería Nogués & Martínez.
+ * Design tokens for Cocheria Nogues & Martinez.
  * A calm identity that runs from a deep navy to a serene celeste, taken from the
  * brand card gradient. Light is the default theme; dark mirrors every token.
  * Never hardcode colors in components — reference these variables only.
@@ -35,10 +35,10 @@
   --focus: #2b82c4;
   --whatsapp: #1fa855;
 
-  /* Brand gradient — hero, contact panel and footer */
-  --grad-1: #071a3d;
+  /* Brand gradient — hero, contact panel and footer (from the brand card) */
+  --grad-1: #03294a;
   --grad-2: #005188;
-  --grad-3: #7ec8f0;
+  --grad-3: #1a6ba3;
 
   /* Elevation */
   --shadow-sm: 0 1px 3px rgba(12, 30, 62, 0.08);
@@ -54,6 +54,8 @@
   /* Typography — families set on <html> via next/font */
   --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
   --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  /* Calligraphic script — brand logotype only (hero wordmark), 700 weight */
+  --font-logo: var(--font-tangerine), 'Tangerine', cursive;
 }
 
 [data-theme='dark'] {

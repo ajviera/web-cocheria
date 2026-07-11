@@ -18,13 +18,20 @@
 }
 
 .brand {
-  font-family: var(--font-serif);
-  font-size: 1.32rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  line-height: 1.05;
-  color: var(--text);
-  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+@media (max-width: 520px) {
+  .logo {
+    height: 30px;
+  }
 }
 
 .links {

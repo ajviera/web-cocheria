@@ -4,8 +4,8 @@ describe('buildFuneralHomeJsonLd', () => {
   describe('when called with the site data', () => {
     it('should build a FuneralHome JSON-LD object with the expected type and address', () => {
       const result = buildFuneralHomeJsonLd({
-        name: 'Cochería Nogués & Martínez',
-        description: 'Cochería en José C. Paz, Buenos Aires.',
+        name: 'Cocheria Nogues & Martinez',
+        description: 'Cocheria en José C. Paz, Buenos Aires.',
         url: 'https://cocherianoguesmartinez.com.ar',
         telephone: '+5491161512447',
         address: 'Av. Gaspar Campos 4848',

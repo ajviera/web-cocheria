@@ -62,10 +62,12 @@
 }
 
 .title {
-  font-weight: 500;
-  font-size: clamp(2.6rem, 6.2vw, 4.6rem);
-  line-height: 1.04;
-  letter-spacing: -0.01em;
+  font-family: var(--font-logo);
+  font-weight: 700;
+  /* Script faces read smaller at a given px, so the wordmark runs larger. */
+  font-size: clamp(3.6rem, 8.5vw, 6.6rem);
+  line-height: 1.02;
+  letter-spacing: 0;
   margin: 0 0 22px;
   color: #fff;
 }

@@ -12,12 +12,12 @@ describe('About', () => {
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          'En Cochería Nogués & Martínez brindamos un servicio funerario integral y personalizado, acompañando a las familias con respeto, calidez y profesionalismo en cada etapa del proceso. Nuestro compromiso es ofrecer tranquilidad, contención y un servicio de excelencia en los momentos más difíciles.',
+          'En Cocheria Nogues & Martinez brindamos un servicio funerario integral y personalizado, acompañando a las familias con respeto, calidez y profesionalismo en cada etapa del proceso. Nuestro compromiso es ofrecer tranquilidad, contención y un servicio de excelencia en los momentos más difíciles.',
         ),
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          'Contamos con un equipo de profesionales capacitados para asesorarlo en todo lo relacionado con servicios funerarios, incluyendo sepelios, cremaciones, traslados nacionales e internacionales, gestiones ante PAMI y otros trámites necesarios, brindando acompañamiento y soluciones de manera clara, responsable y cercana.',
+          'Contamos con un equipo de profesionales capacitados para asesorarlo en todo lo relacionado con servicios funerarios, incluyendo sepelios, cremaciones, traslados, gestiones ante PAMI y otros trámites necesarios, brindando acompañamiento y soluciones de manera clara, responsable y cercana.',
         ),
       ).toBeInTheDocument();
     });

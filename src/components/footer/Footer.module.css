@@ -16,16 +16,14 @@
   padding: clamp(44px, 6vw, 64px) clamp(18px, 4vw, 48px) 32px;
 }
 
-.brand {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.1;
-  color: #fff;
+.logo {
+  display: block;
+  width: auto;
+  height: 52px;
 }
 
 .tagline {
-  margin-top: 8px;
+  margin-top: 12px;
   max-width: 42ch;
   color: #c6dcff;
   font-size: 0.95rem;

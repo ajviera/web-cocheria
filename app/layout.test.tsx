@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 jest.mock('next/font/google', () => ({
   Inter: () => ({ variable: 'font-inter', className: 'font-inter' }),
   Cormorant_Garamond: () => ({ variable: 'font-cormorant', className: 'font-cormorant' }),
+  Tangerine: () => ({ variable: 'font-tangerine', className: 'font-tangerine' }),
 }));
 
 jest.mock('next-intl/server', () => ({

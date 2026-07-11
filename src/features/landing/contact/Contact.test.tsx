@@ -43,7 +43,7 @@ describe('Contact', () => {
       renderWithIntl(<Contact />);
 
       const mapIframe = screen.getByTitle(
-        'Mapa de ubicación de Cochería Nogués & Martínez en José C. Paz',
+        'Mapa de ubicación de Cocheria Nogues & Martinez en José C. Paz',
       );
 
       expect(mapIframe).toBeInTheDocument();

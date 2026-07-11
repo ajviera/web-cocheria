@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SITE, telHref } from '@/config/site';
 import styles from './Footer.module.css';
@@ -10,7 +11,13 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brandBlock}>
-          <p className={styles.brand}>{t('brand')}</p>
+          <Image
+            src="/logos/logo-line-white.png"
+            alt={t('brand')}
+            width={1319}
+            height={200}
+            className={styles.logo}
+          />
           <p className={styles.tagline}>{t('tagline')}</p>
         </div>
 
