@@ -26,12 +26,21 @@ jest.mock('@vercel/speed-insights/next', () => ({
 
 import RootLayout, { generateMetadata } from './layout';
 
+// RootLayout returns a full <html>…</html> tree. Rendering it into RTL's default
+// <div> container triggers an invalid-DOM-nesting warning ("<html> cannot be a
+// child of <div>"). Render it into the document node instead so <html> is a valid
+// child; RTL still queries within document.body and cleans up between tests.
+const renderLayout = (ui: React.ReactElement) => {
+  const documentNode = document as unknown as HTMLElement;
+  return render(ui, { container: documentNode, baseElement: documentNode });
+};
+
 describe('RootLayout', () => {
   describe('when rendered', () => {
     it('should render its children', async () => {
       const ui = await RootLayout({ children: <div>hijo</div> });
 
-      render(ui);
+      renderLayout(ui);
 
       expect(screen.getByText('hijo')).toBeInTheDocument();
     });
@@ -39,7 +48,7 @@ describe('RootLayout', () => {
     it('should render a JSON-LD script tag', async () => {
       const ui = await RootLayout({ children: <div>hijo</div> });
 
-      render(ui);
+      renderLayout(ui);
 
       expect(document.querySelector('script[type="application/ld+json"]')).toBeInTheDocument();
     });
