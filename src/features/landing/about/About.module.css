@@ -66,54 +66,12 @@
   background: var(--sage);
 }
 
-.frame {
-  aspect-ratio: 5 / 4;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  background-color: var(--surface-3);
-  background-image: repeating-linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent) 12%, transparent) 0 2px,
-    transparent 2px 15px
-  );
-  border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.frameIcon {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  border: 1.5px solid var(--border-strong);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.frameIconInner {
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid var(--text-3);
-  border-radius: 4px;
-}
-
-.frameLabel {
-  font-family: ui-monospace, 'SFMono-Regular', monospace;
-  font-size: 0.75rem;
-  color: var(--text-3);
-  text-align: center;
-  padding: 0 20px;
-}
-
 @media (max-width: 860px) {
   .inner {
     grid-template-columns: 1fr;
   }
   .figure {
-    display: none;
+    max-width: 520px;
+    width: 100%;
   }
 }

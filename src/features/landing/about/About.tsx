@@ -1,7 +1,19 @@
 import { useTranslations } from 'next-intl';
+import { Carousel } from './Carousel';
 import styles from './About.module.css';
 
 const HIGHLIGHTS = ['salas', 'equipo', 'integral', 'tramites'] as const;
+
+const FLOWERS = [
+  '/flowers/flower-1.jpg',
+  '/flowers/flower-2.jpg',
+  '/flowers/flower-3.jpg',
+  '/flowers/flower-4.jpg',
+  '/flowers/flower-5.jpg',
+  '/flowers/flower-6.jpg',
+  '/flowers/flower-7.jpg',
+  '/flowers/flower-8.jpg',
+] as const;
 
 export const About = () => {
   const t = useTranslations('about');
@@ -25,13 +37,15 @@ export const About = () => {
           </ul>
         </div>
 
-        <div className={styles.figure} aria-hidden="true">
-          <div className={styles.frame}>
-            <span className={styles.frameIcon}>
-              <span className={styles.frameIconInner} />
-            </span>
-            <span className={styles.frameLabel}>foto — equipo / instalaciones</span>
-          </div>
+        <div className={styles.figure}>
+          <Carousel
+            images={FLOWERS}
+            autoPlayMs={3000}
+            regionLabel={t('carousel.region')}
+            previousLabel={t('carousel.previous')}
+            nextLabel={t('carousel.next')}
+            goToLabel={position => t('carousel.goTo', { position })}
+          />
         </div>
       </div>
     </section>

@@ -53,6 +53,12 @@
       "equipo": "Equipo humano y capacitado",
       "integral": "Servicio integral y personalizado",
       "tramites": "Gestión de trámites y PAMI"
+    },
+    "carousel": {
+      "region": "Galería de arreglos florales",
+      "previous": "Foto anterior",
+      "next": "Foto siguiente",
+      "goTo": "Ir a la foto {position}"
     }
   },
   "contact": {

@@ -1,0 +1,156 @@
+.carousel {
+  position: relative;
+  isolation: isolate;
+}
+
+.viewport {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface-3);
+  box-shadow: var(--shadow-md, 0 18px 44px -24px rgba(0, 0, 0, 0.5));
+}
+
+.track {
+  display: flex;
+  height: 100%;
+  /* Slide from the current position with an ease-out that reads as momentum
+     settling. Dragging drops the transition so the frame tracks the finger 1:1. */
+  transform: translateX(calc(var(--index, 0) * -100% + var(--drag-x, 0px)));
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.track[data-dragging='true'] {
+  transition: none;
+  cursor: grabbing;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.image {
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Translucent, source-anchored controls that float over the photo. */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+  background: color-mix(in srgb, var(--surface) 62%, transparent);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.3s ease;
+}
+
+.carousel:hover .arrow,
+.arrow:focus-visible {
+  opacity: 1;
+}
+
+.arrow:hover {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+.prev {
+  left: 14px;
+}
+
+.next {
+  right: 14px;
+}
+
+.chevron {
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
+
+.prev .chevron {
+  transform: translateX(2px) rotate(135deg);
+}
+
+.next .chevron {
+  transform: translateX(-2px) rotate(-45deg);
+}
+
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border-radius: var(--r-pill);
+  background: color-mix(in srgb, var(--surface-3) 45%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: var(--r-pill);
+  background: color-mix(in srgb, var(--text) 35%, transparent);
+  cursor: pointer;
+  transition:
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.3s ease;
+}
+
+.dot:hover {
+  background: color-mix(in srgb, var(--text) 55%, transparent);
+}
+
+.dot[data-active='true'] {
+  width: 22px;
+  background: var(--accent);
+}
+
+@media (max-width: 860px) {
+  /* Touch: keep the controls visible since there is no hover. */
+  .arrow {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    transition: none;
+  }
+  .arrow,
+  .dot {
+    transition: none;
+  }
+}
