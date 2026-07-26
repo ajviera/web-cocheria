@@ -38,5 +38,14 @@ describe('Hero', () => {
         screen.getByText('Av. Gaspar Campos 4848, José C. Paz, Buenos Aires'),
       ).toBeInTheDocument();
     });
+
+    it('should render the full-bleed storefront photo with descriptive alt text', () => {
+      renderWithIntl(<Hero />);
+
+      const photo = screen.getByRole('img', {
+        name: /Fachada de Cocheria Nogues & Martinez/,
+      });
+      expect(photo).toHaveAttribute('src', expect.stringContaining('fachada'));
+    });
   });
 });

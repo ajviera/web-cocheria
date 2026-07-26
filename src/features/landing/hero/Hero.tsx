@@ -1,13 +1,27 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SITE, telHref, whatsappHref } from '@/config/site';
 import styles from './Hero.module.css';
+
+// Real storefront photo (José C. Paz), rendered full-bleed behind the copy.
+const FACADE_SRC = '/fachada.jpg';
 
 export const Hero = () => {
   const t = useTranslations('hero');
 
   return (
     <section id="inicio" className={styles.hero}>
-      <div className={styles.glow} aria-hidden="true" />
+      <Image
+        src={FACADE_SRC}
+        alt={t('facadeAlt')}
+        fill
+        priority
+        sizes="100vw"
+        className={styles.image}
+      />
+      <div className={styles.veilSide} aria-hidden="true" />
+      <div className={styles.veilBottom} aria-hidden="true" />
+
       <div className={styles.inner}>
         <div className={styles.content}>
           <p className={styles.eyebrow}>
@@ -37,18 +51,6 @@ export const Hero = () => {
             <span className={styles.rule} aria-hidden="true" />
             {SITE.address}
           </p>
-        </div>
-
-        <div className={styles.figure} aria-hidden="true">
-          <div className={styles.frame}>
-            <span className={styles.frameIcon}>
-              <span className={styles.frameIconInner} />
-            </span>
-            <span className={styles.frameLabel}>
-              foto — sala velatoria
-              <br />o fachada
-            </span>
-          </div>
         </div>
       </div>
     </section>

@@ -2,15 +2,44 @@
   position: relative;
   overflow: hidden;
   color: #eef4ff;
-  background: linear-gradient(157deg, var(--grad-1) 0%, var(--grad-2) 52%, var(--grad-3) 118%);
+  background: var(--grad-1);
   border-bottom: 1px solid var(--border);
 }
 
-.glow {
+.image {
   position: absolute;
   inset: 0;
-  background: radial-gradient(120% 90% at 85% 8%, rgba(255, 255, 255, 0.1), transparent 55%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 46% seats the storefront window and keeps the sign uncropped. */
+  object-position: 50% 46%;
+}
+
+/* Darker on the right, where the copy lives, fading toward the facade. */
+.veilSide {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
+  background: linear-gradient(
+    264deg,
+    rgba(2, 20, 40, 0.93) 0%,
+    rgba(2, 22, 44, 0.86) 38%,
+    rgba(3, 32, 58, 0.66) 68%,
+    rgba(3, 36, 64, 0.5) 100%
+  );
+}
+
+/* Seats the hero onto the next section. */
+.veilBottom {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 18, 38, 0.55) 0%,
+    rgba(2, 18, 38, 0) 55%
+  );
 }
 
 .inner {
@@ -19,12 +48,13 @@
   margin: 0 auto;
   padding: clamp(64px, 11vw, 132px) clamp(18px, 4vw, 48px) clamp(72px, 10vw, 120px);
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(36px, 6vw, 72px);
-  align-items: center;
+  grid-template-columns: 1fr;
 }
 
 .content {
+  max-width: 680px;
+  margin-left: auto;
+  text-align: right;
   animation: floatUp 0.7s ease both;
 }
 
@@ -80,6 +110,7 @@
   color: #e6f0ff;
   margin: 0 0 20px;
   max-width: 46ch;
+  margin-left: auto;
 }
 
 .body {
@@ -88,12 +119,14 @@
   color: #dbe8fb;
   max-width: 56ch;
   margin: 0 0 34px;
+  margin-left: auto;
 }
 
 .actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .whatsapp,
@@ -140,6 +173,7 @@
   margin: 30px 0 0;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
   font-size: 0.9rem;
   color: #c6dcff;
@@ -151,56 +185,16 @@
   background: rgba(198, 220, 255, 0.5);
 }
 
-.figure {
-  animation: floatUp 0.9s ease both;
-}
-
-.frame {
-  aspect-ratio: 4 / 5;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.06);
-  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0 2px, transparent 2px 14px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  box-shadow: var(--shadow-lg);
-}
-
-.frameIcon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.frameIconInner {
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
-  border-radius: 4px;
-}
-
-.frameLabel {
-  font-family: ui-monospace, 'SFMono-Regular', monospace;
-  font-size: 0.74rem;
-  letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.72);
-  text-align: center;
-  padding: 0 20px;
-}
-
 @media (max-width: 860px) {
-  .inner {
-    grid-template-columns: 1fr;
-  }
-  .figure {
-    display: none;
+  /* Right-aligned copy spans nearly the full width on narrow screens, so it can
+     sit over the brighter storefront window. A steeper, near-uniform vertical
+     veil keeps every text color at >= 4.5:1 across the whole column. */
+  .veilSide {
+    background: linear-gradient(
+      180deg,
+      rgba(2, 20, 40, 0.86) 0%,
+      rgba(2, 20, 40, 0.82) 45%,
+      rgba(2, 20, 40, 0.88) 100%
+    );
   }
 }
