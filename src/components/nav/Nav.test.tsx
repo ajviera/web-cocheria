@@ -25,25 +25,25 @@ describe('Nav', () => {
     ).toHaveAttribute('href', '#inicio');
   });
 
-  it('should show the navy logo in the default light theme', () => {
+  it('should show the white logo in the default dark theme', () => {
     renderNav();
-
-    expect(
-      screen.getByRole('img', { name: 'Cocheria Nogues & Martinez' }),
-    ).toHaveAttribute('src', expect.stringContaining('logo-line-navy'));
-  });
-
-  it('should switch to the white logo when dark theme is active', async () => {
-    const user = userEvent.setup();
-    renderNav();
-
-    await user.click(
-      screen.getByRole('button', { name: 'Cambiar a modo oscuro' }),
-    );
 
     expect(
       screen.getByRole('img', { name: 'Cocheria Nogues & Martinez' }),
     ).toHaveAttribute('src', expect.stringContaining('logo-line-white'));
+  });
+
+  it('should switch to the navy logo when light theme is active', async () => {
+    const user = userEvent.setup();
+    renderNav();
+
+    await user.click(
+      screen.getByRole('button', { name: 'Cambiar a modo claro' }),
+    );
+
+    expect(
+      screen.getByRole('img', { name: 'Cocheria Nogues & Martinez' }),
+    ).toHaveAttribute('src', expect.stringContaining('logo-line-navy'));
   });
 
   it('should render the section anchor links', () => {
@@ -80,7 +80,7 @@ describe('Nav', () => {
     renderNav();
 
     expect(
-      screen.getByRole('button', { name: 'Cambiar a modo oscuro' }),
+      screen.getByRole('button', { name: 'Cambiar a modo claro' }),
     ).toBeInTheDocument();
   });
 });

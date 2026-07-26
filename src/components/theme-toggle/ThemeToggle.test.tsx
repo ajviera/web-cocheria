@@ -17,35 +17,35 @@ describe('ThemeToggle', () => {
     document.documentElement.removeAttribute('data-theme');
   });
 
-  it('should render a button labelled to switch to dark mode by default', () => {
+  it('should render a button labelled to switch to light mode by default', () => {
     renderToggle();
-
-    expect(
-      screen.getByRole('button', { name: 'Cambiar a modo oscuro' }),
-    ).toBeInTheDocument();
-  });
-
-  it('should switch its aria-label to light mode after a click', async () => {
-    const user = userEvent.setup();
-    renderToggle();
-
-    await user.click(screen.getByRole('button', { name: 'Cambiar a modo oscuro' }));
 
     expect(
       screen.getByRole('button', { name: 'Cambiar a modo claro' }),
     ).toBeInTheDocument();
   });
 
-  it('should switch back to the dark-mode label on a second click', async () => {
+  it('should switch its aria-label to dark mode after a click', async () => {
     const user = userEvent.setup();
     renderToggle();
 
-    const button = screen.getByRole('button', { name: 'Cambiar a modo oscuro' });
-    await user.click(button);
     await user.click(screen.getByRole('button', { name: 'Cambiar a modo claro' }));
 
     expect(
       screen.getByRole('button', { name: 'Cambiar a modo oscuro' }),
+    ).toBeInTheDocument();
+  });
+
+  it('should switch back to the light-mode label on a second click', async () => {
+    const user = userEvent.setup();
+    renderToggle();
+
+    const button = screen.getByRole('button', { name: 'Cambiar a modo claro' });
+    await user.click(button);
+    await user.click(screen.getByRole('button', { name: 'Cambiar a modo oscuro' }));
+
+    expect(
+      screen.getByRole('button', { name: 'Cambiar a modo claro' }),
     ).toBeInTheDocument();
   });
 });

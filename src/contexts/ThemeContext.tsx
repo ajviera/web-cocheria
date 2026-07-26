@@ -19,7 +19,7 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 const STORAGE_KEY = 'cocheria-theme';
-const DEFAULT_THEME: Theme = 'light';
+const DEFAULT_THEME: Theme = 'dark';
 
 const readStoredTheme = (): Theme | null => {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -27,8 +27,8 @@ const readStoredTheme = (): Theme | null => {
 };
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  // Start from the default so the first client render matches the server and
-  // there is no hydration mismatch. The persisted value is adopted after mount.
+  // Start from the default (dark) so the first client render matches the server
+  // and there is no hydration mismatch. The persisted value is adopted after mount.
   const [theme, setTheme] = useState<Theme>(DEFAULT_THEME);
 
   // Adopt the persisted theme once mounted. useLayoutEffect keeps this ahead of

@@ -66,6 +66,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+// Runs synchronously before paint: dark is the default, but if the visitor has
+// already chosen a theme we honor it here to avoid a flash on load. Kept in sync
+// with STORAGE_KEY / DEFAULT_THEME in ThemeContext.
+const THEME_INIT_SCRIPT = `try{var t=localStorage.getItem('cocheria-theme');document.documentElement.setAttribute('data-theme',t==='light'||t==='dark'?t:'dark')}catch(e){}`;
+
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   const locale = await getLocale();
   const messages = await getMessages();
@@ -87,9 +92,11 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
     <html
       lang={locale}
       className={`${inter.variable} ${cormorant.variable} ${tangerine.variable}`}
+      data-theme="dark"
       suppressHydrationWarning
     >
       <body>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <JsonLd data={jsonLd} />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}

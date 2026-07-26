@@ -71,10 +71,12 @@ re-export (e.g. `src/components/nav/{Nav.tsx, Nav.module.css, index.ts}`).
   address) is read from `NEXT_PUBLIC_*` variables in `src/config/site.ts`
   (`SITE` object). There is NO email on the site; the channels are WhatsApp, phone,
   and address. Use the `telHref` and `whatsappHref` helpers to build the links.
-- **Light theme by default, with a toggle.** The theme starts light to match
-  the server render (avoids a hydration mismatch); the value persisted
-  in `localStorage` (`cocheria-theme`) is adopted after mount. The theme is
-  reflected as `data-theme="dark"` on `<html>` and the CSS tokens react to that.
+- **Dark theme by default, with a toggle.** `<html>` is server-rendered with
+  `data-theme="dark"` and `ThemeProvider` starts from the same default, so there is
+  no hydration mismatch. A blocking inline script in `app/layout.tsx`
+  (`THEME_INIT_SCRIPT`) reads `localStorage` (`cocheria-theme`) before paint and
+  applies a persisted `light`/`dark` choice to avoid a flash; `ThemeProvider` then
+  re-adopts that value after mount. CSS tokens key off `data-theme`.
 - **No hardcoded colors.** Every color/style comes from the tokens in
   `src/styles/tokens.css` (light theme in `:root`, dark in `[data-theme='dark']`).
   No inline styles or loose hex values in components.

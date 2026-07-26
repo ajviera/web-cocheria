@@ -23,20 +23,7 @@ describe('ThemeContext', () => {
   });
 
   describe('ThemeProvider', () => {
-    it('should default to the light theme and reflect it on <html>', () => {
-      render(
-        <ThemeProvider>
-          <Consumer />
-        </ThemeProvider>,
-      );
-
-      expect(screen.getByTestId('theme-value')).toHaveTextContent('light');
-      expect(document.documentElement).toHaveAttribute('data-theme', 'light');
-    });
-
-    it('should adopt a valid persisted theme from localStorage on mount', () => {
-      localStorage.setItem(STORAGE_KEY, 'dark');
-
+    it('should default to the dark theme and reflect it on <html>', () => {
       render(
         <ThemeProvider>
           <Consumer />
@@ -45,6 +32,19 @@ describe('ThemeContext', () => {
 
       expect(screen.getByTestId('theme-value')).toHaveTextContent('dark');
       expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
+    });
+
+    it('should adopt a valid persisted theme from localStorage on mount', () => {
+      localStorage.setItem(STORAGE_KEY, 'light');
+
+      render(
+        <ThemeProvider>
+          <Consumer />
+        </ThemeProvider>,
+      );
+
+      expect(screen.getByTestId('theme-value')).toHaveTextContent('light');
+      expect(document.documentElement).toHaveAttribute('data-theme', 'light');
     });
 
     it('should ignore an invalid persisted value and keep the default theme', () => {
@@ -56,10 +56,10 @@ describe('ThemeContext', () => {
         </ThemeProvider>,
       );
 
-      expect(screen.getByTestId('theme-value')).toHaveTextContent('light');
+      expect(screen.getByTestId('theme-value')).toHaveTextContent('dark');
     });
 
-    it('should toggle between dark and light, persisting each change', async () => {
+    it('should toggle between light and dark, persisting each change', async () => {
       const user = userEvent.setup();
       render(
         <ThemeProvider>
@@ -69,15 +69,15 @@ describe('ThemeContext', () => {
 
       await user.click(screen.getByRole('button', { name: 'toggle' }));
 
-      expect(screen.getByTestId('theme-value')).toHaveTextContent('dark');
-      expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
-      expect(localStorage.getItem(STORAGE_KEY)).toBe('dark');
-
-      await user.click(screen.getByRole('button', { name: 'toggle' }));
-
       expect(screen.getByTestId('theme-value')).toHaveTextContent('light');
       expect(document.documentElement).toHaveAttribute('data-theme', 'light');
       expect(localStorage.getItem(STORAGE_KEY)).toBe('light');
+
+      await user.click(screen.getByRole('button', { name: 'toggle' }));
+
+      expect(screen.getByTestId('theme-value')).toHaveTextContent('dark');
+      expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
+      expect(localStorage.getItem(STORAGE_KEY)).toBe('dark');
     });
   });
 
