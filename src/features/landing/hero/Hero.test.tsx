@@ -1,6 +1,14 @@
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { track } from '@vercel/analytics';
 import { renderWithIntl } from '@/test-utils/render-with-intl';
 import { Hero } from './Hero';
+
+jest.mock('@vercel/analytics', () => ({ track: jest.fn() }));
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('Hero', () => {
   describe('when rendered', () => {
@@ -46,6 +54,26 @@ describe('Hero', () => {
         name: /Fachada de Cocheria Nogues & Martinez/,
       });
       expect(photo).toHaveAttribute('src', expect.stringContaining('fachada'));
+    });
+  });
+
+  describe('when the user takes a contact action', () => {
+    it('should report the WhatsApp click from the hero', async () => {
+      const user = userEvent.setup();
+      renderWithIntl(<Hero />);
+
+      await user.click(screen.getByRole('link', { name: /Escribir por WhatsApp/ }));
+
+      expect(track).toHaveBeenCalledWith('whatsapp_click', { location: 'hero' });
+    });
+
+    it('should report the call click from the hero', async () => {
+      const user = userEvent.setup();
+      renderWithIntl(<Hero />);
+
+      await user.click(screen.getByRole('link', { name: 'Llamar ahora' }));
+
+      expect(track).toHaveBeenCalledWith('tel_click', { location: 'hero' });
     });
   });
 });

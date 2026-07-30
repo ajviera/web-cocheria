@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SITE, telHref, whatsappHref } from '@/config/site';
+import { ANALYTICS_EVENTS, ANALYTICS_LOCATIONS } from '@/config/analytics';
+import { TrackedLink } from '@/components/tracked-link';
 import styles from './Hero.module.css';
 
 // Real storefront photo (José C. Paz), rendered full-bleed behind the copy.
 const FACADE_SRC = '/fachada.jpg';
+
+const FROM_HERO = { location: ANALYTICS_LOCATIONS.hero };
 
 export const Hero = () => {
   const t = useTranslations('hero');
@@ -33,18 +37,25 @@ export const Hero = () => {
           <p className={styles.body}>{t('body')}</p>
 
           <div className={styles.actions}>
-            <a
+            <TrackedLink
               href={whatsappHref(SITE.whatsapp)}
               className={styles.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
+              event={ANALYTICS_EVENTS.whatsappClick}
+              eventProperties={FROM_HERO}
             >
               <span className={styles.dotSolid} aria-hidden="true" />
               {t('ctaWhatsapp')}
-            </a>
-            <a href={telHref(SITE.tel)} className={styles.call}>
+            </TrackedLink>
+            <TrackedLink
+              href={telHref(SITE.tel)}
+              className={styles.call}
+              event={ANALYTICS_EVENTS.telClick}
+              eventProperties={FROM_HERO}
+            >
               {t('ctaCall')}
-            </a>
+            </TrackedLink>
           </div>
 
           <p className={styles.address}>

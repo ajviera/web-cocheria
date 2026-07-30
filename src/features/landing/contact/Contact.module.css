@@ -148,6 +148,8 @@
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
+  /* The address card renders as <address>, which browsers italicize by default. */
+  font-style: normal;
 }
 
 .arrow {

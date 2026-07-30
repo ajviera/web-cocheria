@@ -1,6 +1,14 @@
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { track } from '@vercel/analytics';
 import { renderWithIntl } from '@/test-utils/render-with-intl';
 import { Footer } from './Footer';
+
+jest.mock('@vercel/analytics', () => ({ track: jest.fn() }));
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('Footer', () => {
   it('should render the brand logo and tagline', () => {
@@ -31,12 +39,22 @@ describe('Footer', () => {
     );
   });
 
-  it('should render the configured address', () => {
+  it('should render the configured address in a semantic address element', () => {
+    const { container } = renderWithIntl(<Footer />);
+
+    const address = container.querySelector('address');
+
+    expect(address).toBeInTheDocument();
+    expect(address).toHaveTextContent('Av. Gaspar Campos 4848, José C. Paz, Buenos Aires');
+  });
+
+  it('should report the phone click from the footer', async () => {
+    const user = userEvent.setup();
     renderWithIntl(<Footer />);
 
-    expect(
-      screen.getByText('Av. Gaspar Campos 4848, José C. Paz, Buenos Aires'),
-    ).toBeInTheDocument();
+    await user.click(screen.getByRole('link', { name: '15-6151-2447' }));
+
+    expect(track).toHaveBeenCalledWith('tel_click', { location: 'footer' });
   });
 
   it('should render the current year in the legal notice', () => {

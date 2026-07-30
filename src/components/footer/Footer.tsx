@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SITE, telHref } from '@/config/site';
+import { ANALYTICS_EVENTS, ANALYTICS_LOCATIONS } from '@/config/analytics';
+import { TrackedLink } from '@/components/tracked-link';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
@@ -23,10 +25,15 @@ export const Footer = () => {
 
         <div className={styles.meta}>
           <span className={styles.badge}>{t('availability')}</span>
-          <a href={telHref(SITE.tel)} className={styles.phone}>
+          <TrackedLink
+            href={telHref(SITE.tel)}
+            className={styles.phone}
+            event={ANALYTICS_EVENTS.telClick}
+            eventProperties={{ location: ANALYTICS_LOCATIONS.footer }}
+          >
             {SITE.phone}
-          </a>
-          <span className={styles.phone}>{SITE.address}</span>
+          </TrackedLink>
+          <address className={styles.phone}>{SITE.address}</address>
         </div>
       </div>
 

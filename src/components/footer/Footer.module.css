@@ -51,6 +51,8 @@
   font-size: 1.05rem;
   color: #eef4ff;
   transition: color 0.2s ease;
+  /* The address line renders as <address>, which browsers italicize by default. */
+  font-style: normal;
 }
 
 .phone:hover {
