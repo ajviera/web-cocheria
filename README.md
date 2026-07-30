@@ -62,8 +62,25 @@ can override it in `.env.local` (ignored by git):
 | `NEXT_PUBLIC_CONTACT_TEL` | `+5491161512447` | `tel:` link. |
 | `NEXT_PUBLIC_CONTACT_WHATSAPP` | `5491161512447` | `wa.me` link (digits only). |
 | `NEXT_PUBLIC_CONTACT_ADDRESS` | `Av. Gaspar Campos 4848, José C. Paz, Buenos Aires` | Address. |
+| `NEXT_PUBLIC_CONTACT_LOCALITY` | `José C. Paz` | Locality, for the JSON-LD postal address. |
+| `NEXT_PUBLIC_CONTACT_REGION` | `Buenos Aires` | Region, for the JSON-LD postal address. |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.cocherianoguesymartinez.com` | Canonical origin used by metadata, sitemap, robots and JSON-LD. |
 
 There is no email: the contact channels are WhatsApp, phone and address.
+
+## Production
+
+The site is deployed on Vercel at **<https://www.cocherianoguesymartinez.com>**.
+
+`www` is the canonical host: the apex domain must 301-redirect to it, and
+`NEXT_PUBLIC_SITE_URL` must be set to it in Vercel for **Production and Preview**,
+with **no trailing slash** — everything SEO-facing derives from that single value
+(`metadataBase`, the canonical link, `og:url`, `sitemap.xml`, the sitemap pointer in
+`robots.txt`, and the `FuneralHome` JSON-LD). Under test it stays `http://localhost:3000`
+so assertions never depend on the real domain.
+
+See [`spec-docs/seo-handbook.md`](spec-docs/seo-handbook.md) for the step-by-step SEO
+setup runbook.
 
 ## Scripts
 

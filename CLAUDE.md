@@ -71,6 +71,15 @@ re-export (e.g. `src/components/nav/{Nav.tsx, Nav.module.css, index.ts}`).
   address) is read from `NEXT_PUBLIC_*` variables in `src/config/site.ts`
   (`SITE` object). There is NO email on the site; the channels are WhatsApp, phone,
   and address. Use the `telHref` and `whatsappHref` helpers to build the links.
+- **Canonical domain is `https://www.cocherianoguesymartinez.com`** (`www`, https, **no
+  trailing slash**), read from `NEXT_PUBLIC_SITE_URL` and exported as `SITE_URL` in
+  `src/config/site.ts`. It is the single origin behind `metadataBase`, the canonical
+  link, `og:url`, `app/sitemap.ts`, the sitemap pointer in `app/robots.ts`, and every
+  `url`/`@id` of the `FuneralHome` JSON-LD. Never hardcode the host anywhere else, never
+  add a trailing slash (it yields `//` in the emitted URLs), and keep it byte-identical to
+  the link published in the Google Business Profile. It must also be set in Vercel
+  (Production **and** Preview); the code falls back to `http://localhost:3000` so `next dev`
+  and the tests never crash on an unset value.
 - **Dark theme by default, with a toggle.** `<html>` is server-rendered with
   `data-theme="dark"` and `ThemeProvider` starts from the same default, so there is
   no hydration mismatch. A blocking inline script in `app/layout.tsx`
@@ -100,8 +109,13 @@ Defined in `.env` (public, no secrets; local overrides in `.env.local`):
 | `NEXT_PUBLIC_CONTACT_TEL` | `+5491161512447` | `href="tel:"` (international format). |
 | `NEXT_PUBLIC_CONTACT_WHATSAPP` | `5491161512447` | `wa.me` link (digits only). |
 | `NEXT_PUBLIC_CONTACT_ADDRESS` | `Av. Gaspar Campos 4848, José C. Paz, Buenos Aires` | Address. |
+| `NEXT_PUBLIC_CONTACT_LOCALITY` | `José C. Paz` | JSON-LD `addressLocality`. |
+| `NEXT_PUBLIC_CONTACT_REGION` | `Buenos Aires` | JSON-LD `addressRegion`. |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.cocherianoguesymartinez.com` | Canonical origin (see below). |
 
-`jest.setup.ts` sets these same values so the tests are deterministic.
+`jest.setup.ts` sets these same values so the tests are deterministic — except
+`NEXT_PUBLIC_SITE_URL`, which stays `http://localhost:3000` under test so URL
+assertions never depend on the real domain.
 
 ## Conventions
 
