@@ -22,6 +22,24 @@ describe('About', () => {
       ).toBeInTheDocument();
     });
 
+    it('should give each gallery photo a distinct, non-empty alt text', () => {
+      const { container } = renderWithIntl(<About />);
+
+      const alts = Array.from(container.querySelectorAll('img')).map(img =>
+        img.getAttribute('alt'),
+      );
+
+      expect(alts).toHaveLength(8);
+      expect(alts.every(alt => Boolean(alt))).toBe(true);
+      expect(new Set(alts).size).toBe(8);
+      expect(
+        screen.getByRole('img', {
+          name: 'Corona fúnebre íntegramente blanca, con flores claras y abundante follaje verde',
+          hidden: true,
+        }),
+      ).toBeInTheDocument();
+    });
+
     it('should render the four highlights', () => {
       renderWithIntl(<About />);
 

@@ -2,7 +2,11 @@ import { render, screen, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Carousel } from './Carousel';
 
-const IMAGES = ['/flowers/a.jpg', '/flowers/b.jpg', '/flowers/c.jpg'];
+const IMAGES = [
+  { src: '/flowers/a.jpg', alt: 'Corona de crisantemos blancos' },
+  { src: '/flowers/b.jpg', alt: 'Corona de rosas rojas' },
+  { src: '/flowers/c.jpg', alt: 'Corona en tonos pastel' },
+];
 
 const renderCarousel = (props: Partial<React.ComponentProps<typeof Carousel>> = {}) =>
   render(
@@ -53,6 +57,16 @@ describe('Carousel', () => {
       expect(screen.getAllByRole('button', { name: /Ir a la foto/ })).toHaveLength(3);
       expect(dot(1)).toHaveAttribute('aria-current', 'true');
       expect(dot(2)).toHaveAttribute('aria-current', 'false');
+    });
+
+    // Only the active slide is exposed to assistive tech (the rest are
+    // aria-hidden), so query with `hidden: true` to reach every photo's alt.
+    it('should give every photo its own descriptive alt text', () => {
+      renderCarousel();
+
+      IMAGES.forEach(({ alt }) => {
+        expect(screen.getByRole('img', { name: alt, hidden: true })).toBeInTheDocument();
+      });
     });
   });
 
@@ -113,7 +127,10 @@ describe('Carousel', () => {
 
     it('should not advance with a single photo', () => {
       jest.useFakeTimers();
-      renderCarousel({ images: ['/flowers/only.jpg'], autoPlayMs: 1000 });
+      renderCarousel({
+        images: [{ src: '/flowers/only.jpg', alt: 'Corona de flores blancas' }],
+        autoPlayMs: 1000,
+      });
 
       act(() => {
         jest.advanceTimersByTime(1000);

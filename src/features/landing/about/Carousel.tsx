@@ -9,8 +9,14 @@ interface TrackStyle extends React.CSSProperties {
   '--drag-x': string;
 }
 
+export interface CarouselImage {
+  src: string;
+  /** Describes the arrangement — these are real product photos, not decoration. */
+  alt: string;
+}
+
 interface CarouselProps {
-  images: readonly string[];
+  images: readonly CarouselImage[];
   regionLabel: string;
   previousLabel: string;
   nextLabel: string;
@@ -107,11 +113,11 @@ export const Carousel = ({
           onPointerCancel={handlePointerEnd}
           onPointerLeave={handlePointerEnd}
         >
-          {images.map((src, i) => (
-            <div className={styles.slide} key={src} aria-hidden={i !== index}>
+          {images.map((image, i) => (
+            <div className={styles.slide} key={image.src} aria-hidden={i !== index}>
               <Image
-                src={src}
-                alt=""
+                src={image.src}
+                alt={image.alt}
                 fill
                 sizes="(max-width: 860px) 100vw, 45vw"
                 className={styles.image}
@@ -140,9 +146,9 @@ export const Carousel = ({
       </button>
 
       <div className={styles.dots}>
-        {images.map((src, i) => (
+        {images.map((image, i) => (
           <button
-            key={src}
+            key={image.src}
             type="button"
             className={styles.dot}
             data-active={i === index}

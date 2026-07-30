@@ -4,15 +4,18 @@ import styles from './About.module.css';
 
 const HIGHLIGHTS = ['salas', 'equipo', 'integral', 'tramites'] as const;
 
+// Real photos of arrangements we made. Each carries its own alt (see
+// `about.carousel.photos.*`): they are product photography, not decoration, so
+// an empty alt would throw away the only image-search signal the site has.
 const FLOWERS = [
-  '/flowers/flower-1.jpg',
-  '/flowers/flower-2.jpg',
-  '/flowers/flower-3.jpg',
-  '/flowers/flower-4.jpg',
-  '/flowers/flower-5.jpg',
-  '/flowers/flower-6.jpg',
-  '/flowers/flower-7.jpg',
-  '/flowers/flower-8.jpg',
+  { src: '/flowers/flower-1.jpg', altKey: 'carousel.photos.photo1' },
+  { src: '/flowers/flower-2.jpg', altKey: 'carousel.photos.photo2' },
+  { src: '/flowers/flower-3.jpg', altKey: 'carousel.photos.photo3' },
+  { src: '/flowers/flower-4.jpg', altKey: 'carousel.photos.photo4' },
+  { src: '/flowers/flower-5.jpg', altKey: 'carousel.photos.photo5' },
+  { src: '/flowers/flower-6.jpg', altKey: 'carousel.photos.photo6' },
+  { src: '/flowers/flower-7.jpg', altKey: 'carousel.photos.photo7' },
+  { src: '/flowers/flower-8.jpg', altKey: 'carousel.photos.photo8' },
 ] as const;
 
 export const About = () => {
@@ -39,7 +42,7 @@ export const About = () => {
 
         <div className={styles.figure}>
           <Carousel
-            images={FLOWERS}
+            images={FLOWERS.map(({ src, altKey }) => ({ src, alt: t(altKey) }))}
             autoPlayMs={3000}
             regionLabel={t('carousel.region')}
             previousLabel={t('carousel.previous')}

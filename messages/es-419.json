@@ -58,7 +58,17 @@
       "region": "Galería de arreglos florales",
       "previous": "Foto anterior",
       "next": "Foto siguiente",
-      "goTo": "Ir a la foto {position}"
+      "goTo": "Ir a la foto {position}",
+      "photos": {
+        "photo1": "Corona fúnebre con crisantemos blancos, rosas rojas y flores lilas sobre follaje verde",
+        "photo2": "Corona fúnebre con crisantemos blancos y amarillos, rosas rojas y flores lilas",
+        "photo3": "Corona fúnebre con crisantemos blancos y amarillos y flores rosadas, con cinta de dedicatoria",
+        "photo4": "Corona fúnebre de rosas rojas con crisantemos blancos y follaje verde",
+        "photo5": "Corona fúnebre en tonos blancos y amarillos, con crisantemos y flores de estación",
+        "photo6": "Corona fúnebre íntegramente blanca, con flores claras y abundante follaje verde",
+        "photo7": "Corona fúnebre con crisantemos blancos, rosas rojas y flores violetas",
+        "photo8": "Corona fúnebre en tonos pastel, con crisantemos blancos, amarillos, rosados y naranjas"
+      }
     }
   },
   "contact": {
