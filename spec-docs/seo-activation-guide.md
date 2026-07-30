@@ -1,5 +1,10 @@
 # SEO Activation Guide — step-by-step runbook (human-in-the-loop)
 
+> ⚠️ **SUPERSEDED (2026-07-30) by [`spec-docs/seo-handbook.md`](./seo-handbook.md).**
+> Its state snapshot predates the branding (`656e037`) and landing-redesign commits, so parts of it
+> are stale (e.g. it reports `app/icon.png` as missing — it exists; it does not know the brand name
+> lost its accents). **Agents: drive the handbook, not this file.** Kept for historical reference.
+
 > **Companion to** `spec-docs/seo-spec.md` (the spec) and `spec-docs/seo-implementation-report.md` (what already shipped).
 > **Purpose:** the P0+P1 **code** is implemented, tested, and green — but the SEO is **not yet 100% functional in production**. Everything that remains depends on facts or actions that live *outside the codebase* (a real domain, brand images, Google accounts, verified data). This document is the ordered, exact procedure to close that gap.
 > **Audience:** an **agent driving a developer/owner**. Each step is discrete and checkable. Locale of the docs: English; any **site copy** is quoted **verbatim in Spanish (es-419)**.
